@@ -15,6 +15,8 @@ const PropertySchema = new mongoose.Schema(
     },
     bedrooms: { type: Number },
     bathrooms: { type: Number },
+    latitude: { type: Number },
+    longitude: { type: Number },
     area: { type: Number }, // square footage
     images: { type: Array },
     videoUrl: { type: String },

@@ -11,7 +11,10 @@ const cors = require("cors");
 // Allow CORS for all methods
 app.use(
   cors({
-    origin: "http://localhost:8080", // Allow frontend origin
+    origin: [
+      "http://localhost:8080",
+      "https://estate-explorer-ivory.vercel.app",
+    ], // Allow frontend origin
     methods: ["GET", "POST", "PUT", "DELETE"], // Include PUT & DELETE
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // If using cookies or authentication
