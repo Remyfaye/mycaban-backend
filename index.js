@@ -26,7 +26,7 @@ const upload = multer({ dest: "uploads/" });
 app.post("/upload", upload.single("image"), (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No file uploaded" });
 
-  const imageUrl = `http://localhost:8800/uploads/${req.file.filename}`;
+  const imageUrl = `https://mycaban-backend.onrender.com/uploads/${req.file.filename}`;
   res.json({ imageUrl });
 });
 // ✅ Serve uploaded files with CORS-friendly headers
