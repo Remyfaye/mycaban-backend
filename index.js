@@ -23,6 +23,7 @@ app.use(
       "http://localhost:8080",
       "https://estate-explorer-ivory.vercel.app",
       "https://mycaban-backend.onrender.com",
+      "https://mycaban.com.ng",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -54,7 +55,7 @@ app.post("/upload", upload.single("image"), async (req, res) => {
     res.json({ imageUrl: result.secure_url });
   } catch (err) {
     console.error("Cloudinary upload error:", err);
-    res.status(500).json({ error: "Upload failed" });
+    res.status(500).json({ error: `Upload failed:${err}` });
   }
 });
 
